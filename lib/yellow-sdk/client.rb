@@ -1,6 +1,6 @@
 module Yellow
 
-        VERSION = "0.0.1"
+        VERSION = "0.0.3"
         YELLOW_SERVER = "https://" + (ENV["YELLOW_SERVER"] || "api.yellowpay.co")
 
     class YellowApiError < Exception ; end
@@ -52,7 +52,7 @@ module Yellow
             ####
 
             signature = get_signature(host_url, request_body, request_nonce, @api_secret)
-            signature == request_signature ? return true : return false
+            signature == request_signature
         end
 
         private
