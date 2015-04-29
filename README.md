@@ -1,5 +1,6 @@
 Yellow Ruby SDK
 =====================
+
 This is the Yellow Ruby SDK. This simple SDK contains couple of Ruby methods that makes it easy to integrate with the Yellow API. To get started just:
 ```
 gem install yellow-sdk
