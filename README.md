@@ -36,7 +36,6 @@ You should see something similar to the following in your terminal:
     "invoice_ccy": "BTC",
     "invoice_price": "0.00017070",
     "received": "0",
-    "redirect": null,
     "remaining": "0.00017070",
     "server_time": "2015-03-10T18:07:51.454Z",
     "status": "new", # Status of the invoice. Other values are "authorizing" for unconfirmed transactions, and "paid" for confirmed transactions
