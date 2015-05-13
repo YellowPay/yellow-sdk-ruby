@@ -1,6 +1,6 @@
 module Yellow
 
-        VERSION = "0.0.5"
+        VERSION = "0.0.6"
         YELLOW_SERVER = "https://" + (ENV["YELLOW_SERVER"] || "api.yellowpay.co")
 
     class YellowApiError < Exception ; end
@@ -63,7 +63,7 @@ module Yellow
 
             url = YELLOW_SERVER + endpoint
 
-            nonce = Time.now.to_i * 1000
+            nonce = Time.now.to_f * 1000
             signature = get_signature(url, body, nonce, @api_secret)
 
             uri = URI.parse(YELLOW_SERVER)
@@ -82,7 +82,7 @@ module Yellow
             request.add_field('API-Nonce', nonce)
             request.add_field('API-Sign', signature)
             request.add_field('API-Platform', "#{RUBY_PLATFORM} - Ruby #{RUBY_VERSION}")
-            request.add_field('API-Version', VERSION)
+            request.add_field('API-Plugin', VERSION)
             request.body = body
             response = http.request(request)
             
